@@ -1,5 +1,6 @@
 Versões:
 Versão Postgres - 14
+Versão JAVA - 8
 
 ---------------------
 Para rodar o projeto:
