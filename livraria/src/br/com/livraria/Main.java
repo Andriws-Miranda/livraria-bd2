@@ -45,6 +45,10 @@ public class Main {
 			} else if(operacao == 2) {
 				Livraria livraria = new Livraria();
 				teclado = new Scanner(System.in);
+				System.out.println("Digite o novo nome para ser atualizado: ");
+				String nome = teclado.nextLine();
+				livraria.setNome(nome);
+				teclado.reset();
 				System.out.println("Digite o novo endereco para ser atualizado: ");
 				String endereco = teclado.nextLine();
 				livraria.setEndereco(endereco);
@@ -59,7 +63,7 @@ public class Main {
 				List<Livraria> livrarias = dao.obterTodos();
 				for (Livraria l : livrarias) {
 					System.out.println("Nome: " + l.getNome() + "\n" + "Endereco: " + l.getEndereco() + "\n"
-							+ "CNPJ: " + l.getCnpj() + "\n" + "Codigo Livraria" + l.getCodigoLivraria());
+							+ "CNPJ: " + l.getCnpj() + "\n" + l.getCodigoLivraria());
 				}
 			}else if(operacao == 4) {
 				Livraria livraria = new Livraria();
@@ -119,20 +123,24 @@ public class Main {
 			} else if(operacao == 2) {
 				Livro livro = new Livro();
 				teclado = new Scanner(System.in);
-				System.out.println("Digite o novo nome do Livro: ");
+				System.out.println("Digite o novo nome para o Livro: ");
 				String nome = teclado.nextLine();
+				livro.setNome(nome);
 				teclado.reset();
-				System.out.println("Digite o codigo do livro para ser atualizado: ");
-				Integer codigo = teclado.nextInt();
+				
+				System.out.println("Digite o codigo do livro para atualizar: ");
+				int codigoLivro = teclado.nextInt();
+				livro.setCodigoLivro(codigoLivro);
 				teclado.reset();
+				
 				LivroDAO dao = new LivroDAO();
-				dao.atualizar(livro);	
+				dao.atualizar(livro);
 			}else if(operacao == 3) {
 				LivroDAO dao = new LivroDAO();
 				
 				List<Livro> livros = dao.obterLivros();
 				for (Livro l : livros) {
-					System.out.println("Nome: " + l.getNome() + "\n" + "Autor: " + l.getAutor() + "\n" + "Codigo Livro: " + l.getCodigoLivro());
+					System.out.println("Nome: " + l.getNome() + "\n" + "Autor: " + l.getAutor() + "\n" + l.getCodigoLivro());
 				}
 			} else if(operacao == 4) {
 				teclado = new Scanner(System.in);
@@ -164,6 +172,7 @@ public class Main {
 				venda.setDataVenda(date);
 				VendaDAO dao = new VendaDAO();
 				dao.inserirVenda(venda);
+				
 			}
 			else if(operacao == 2) {
 				Venda venda = new Venda();

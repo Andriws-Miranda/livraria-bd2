@@ -27,7 +27,7 @@ public class VendaDAO {
 			
 			preparator.execute();
 			preparator.close();
-			System.out.println("Cadatro realizado com Sucesso!");
+			System.out.println("Cadastro realizado com Sucesso!");
 		} catch (SQLException e) {
 			System.out.println("Error: " + e.getMessage());
 		}
@@ -80,6 +80,8 @@ public class VendaDAO {
 				venda.setCodigoLivro(result.getInt("codigo_livro"));
 				lista.add(venda);
 			}
+			preparator.close();
+			System.out.println("Todos resultados obtidos!");
 		}catch (SQLException e) {
 			System.out.println("Erro: " + e.getMessage());
 		}
@@ -99,6 +101,8 @@ public class VendaDAO {
 				venda.setCodigoLivro(result.getInt("codigo_livro"));
 				venda.setDataVenda(result.getDate("data_venda"));
 			}
+			preparator.close();
+			System.out.println("Resultado Obtido!");
 		} catch (SQLException e) {
 			System.out.println("Erro: " + e.getMessage());
 		}
