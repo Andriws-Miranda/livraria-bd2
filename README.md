@@ -21,6 +21,8 @@ CREATE TABLE LIVRO(codigo_livro SERIAL PRIMARY KEY,
 		editora VARCHAR(25) NOT NULL,
 		estoque NUMERIC NOT NULL,
 		preco NUMERIC NOT NULL,
-		isbn VARCHAR UNIQUE NOT NULL
+		isbn VARCHAR UNIQUE NOT NULL,
+		codigo_livraria INTEGER NOT NULL,
+	CONSTRAINT fk_livraria FOREIGN KEY (codigo_livraria) REFERENCES LIVRARIA (codigo_livraria)
 );
 
