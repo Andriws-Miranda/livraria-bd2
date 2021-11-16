@@ -6,20 +6,18 @@ public class Livro {
 	private String nome;
 	private String autor;
 	private String editora;
-	private Integer estoque;
 	private Double preco;
 	private String isbn;
-	private Livraria codigoLivraria;
+	private Integer codigoLivraria;
 	
 	
 	public Livro() {}
 
-	public Livro(String nome, String autor, String editora, Integer estoque, Double preco,
-			String isbn, Livraria codigoLivraria) {
+	public Livro(String nome, String autor, String editora, Double preco,
+			String isbn, Integer codigoLivraria) {
 		this.nome = nome;
 		this.autor = autor;
 		this.editora = editora;
-		this.estoque = estoque;
 		this.preco = preco;
 		this.isbn = isbn;
 		this.codigoLivraria = codigoLivraria;
@@ -57,14 +55,6 @@ public class Livro {
 		this.editora = editora;
 	}
 
-	public Integer getEstoque() {
-		return estoque;
-	}
-
-	public void setEstoque(Integer estoque) {
-		this.estoque = estoque;
-	}
-
 	public Double getPreco() {
 		return preco;
 	}
@@ -82,11 +72,11 @@ public class Livro {
 	}
 
 
-	public Livraria getCodigoLivraria() {
+	public Integer getCodigoLivraria() {
 		return codigoLivraria;
 	}
 	
-	public void setCodigoLivraria(Livraria codigoLivraria) {
+	public void setCodigoLivraria(Integer codigoLivraria) {
 		this.codigoLivraria = codigoLivraria;
 	}
 

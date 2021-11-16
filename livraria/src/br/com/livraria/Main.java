@@ -59,7 +59,7 @@ public class Main {
 				List<Livraria> livrarias = dao.obterTodos();
 				for (Livraria l : livrarias) {
 					System.out.println("Nome: " + l.getNome() + "\n" + "Endereco: " + l.getEndereco() + "\n"
-							+ "CNPJ: " + l.getCnpj());
+							+ "CNPJ: " + l.getCnpj() + "\n" + "Codigo Livraria" + l.getCodigoLivraria());
 				}
 			}else if(operacao == 4) {
 				Livraria livraria = new Livraria();
@@ -82,30 +82,38 @@ public class Main {
 			if(operacao == 1) {
 				Livro livro = new Livro();
 				teclado = new Scanner(System.in);
+				
 				System.out.println("Digite o nome para o Livro: ");
 				String nome = teclado.nextLine();
 				livro.setNome(nome);
 				teclado.reset();
+				
 				System.out.println("Digite o nome do Autor: ");
 				String autor = teclado.nextLine();
 				livro.setAutor(autor);
 				teclado.reset();
+				
 				System.out.println("Digite o nome da Editora: ");
 				String editora = teclado.nextLine();
 				livro.setEditora(editora);
 				teclado.reset();
+				
 				System.out.println("Digite o preço do Livro: ");
 				double preco = teclado.nextDouble();
 				livro.setPreco(preco);
 				teclado.reset();
+				
+				Scanner teclado2 = new Scanner(System.in);
 				System.out.println("Digite o isbn do Livro: ");
-				String isbn = teclado.nextLine();
+				String isbn = teclado2.nextLine();
 				livro.setIsbn(isbn);
-				teclado.reset();
+				teclado2.reset();
+				
 				System.out.println("Digite o codigo da Livraria em que o Livro ficará: ");
-				int codigoLivraria = teclado.nextInt();
+				int codigoLivraria = teclado2.nextInt();
 				livro.setCodigoLivraria(codigoLivraria);
-				teclado.reset();
+				teclado2.reset();
+				
 				LivroDAO dao = new LivroDAO();
 				dao.inserir(livro);
 			} else if(operacao == 2) {
@@ -124,7 +132,7 @@ public class Main {
 				
 				List<Livro> livros = dao.obterLivros();
 				for (Livro l : livros) {
-					System.out.println("Nome: " + l.getNome() + "\n" + "Autor: " + l.getAutor());
+					System.out.println("Nome: " + l.getNome() + "\n" + "Autor: " + l.getAutor() + "\n" + "Codigo Livro: " + l.getCodigoLivro());
 				}
 			} else if(operacao == 4) {
 				teclado = new Scanner(System.in);
@@ -148,8 +156,10 @@ public class Main {
 				Integer codigoLivro = teclado.nextInt();
 				venda.setCodigoLivro(codigoLivro);
 				teclado.reset();
+				
+				Scanner teclado2 = new Scanner(System.in);
 				System.out.println("Digite a data da venda (yyyy-mm-dd): ");
-				String data = teclado.nextLine();
+				String data = teclado2.nextLine();
 				Date date = Date.valueOf(data);
 				venda.setDataVenda(date);
 				VendaDAO dao = new VendaDAO();

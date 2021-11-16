@@ -30,7 +30,7 @@ public class LivrariaDAO {
 
 			preparator.execute();
 			preparator.close();
-			System.out.println("Inserção realizada!");
+			System.out.println("InserÃ§Ã£o realizada!");
 
 		} catch (SQLException e) {
 			System.out.println("Error: " + e.getMessage());
@@ -47,7 +47,7 @@ public class LivrariaDAO {
 
 			preparator.execute();
 			preparator.close();
-			System.out.println("Atualização realizada!");
+			System.out.println("AtualizaÃ§Ã£o realizada!");
 
 		} catch (SQLException e) {
 			System.out.println("Error: " + e.getMessage());
@@ -63,7 +63,7 @@ public class LivrariaDAO {
 
 			preparator.execute();
 			preparator.close();
-			System.out.println("Deleção realizada!");
+			System.out.println("DeleÃ§Ã£o realizada!");
 
 		} catch (SQLException e) {
 			System.out.println("Error: " + e.getMessage());
