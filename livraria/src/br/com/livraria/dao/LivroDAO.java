@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import br.com.livraria.Conexao;
+import br.com.livraria.configuracao.Conexao;
 import br.com.livraria.entidades.Livraria;
 import br.com.livraria.entidades.Livro;
 
@@ -20,22 +20,21 @@ public class LivroDAO {
 	}
 	
 	public void inserir(Livro livro) {
-		String sql = "INSERT INTO LIVRO(nome, autor, editora, estoque, preco, isbn, codigoLivraria) "
-				+ "VALUES(?,?,?,?,?,?,?,?)";
+		String sql = "INSERT INTO LIVRO(nome, autor, editora, preco, isbn, codigo_livraria) "
+				+ "VALUES(?,?,?,?,?,?)";
 
 		try {
 			PreparedStatement preparador = conexao.prepareStatement(sql);
 			preparador.setString(1, livro.getNome());
 			preparador.setString(2, livro.getAutor());
 			preparador.setString(3, livro.getEditora());
-			preparador.setInt(4, livro.getEstoque());
-			preparador.setDouble(5, livro.getPreco());
-			preparador.setString(6,livro.getIsbn());
-			preparador.setObject(7, livro.getCodigoLivraria());
+			preparador.setDouble(4, livro.getPreco());
+			preparador.setString(5,livro.getIsbn());
+			preparador.setObject(6, livro.getCodigoLivraria());
 			
 			preparador.execute();
 			preparador.close();
-			System.out.println("Inserção realizada!");
+			System.out.println("InserÃ§Ã£o realizada!");
 
 		} catch (SQLException e) {
 			System.out.println("Error: " + e.getMessage());
@@ -51,7 +50,7 @@ public class LivroDAO {
 			
 			preparador.execute();
 			preparador.close();
-			System.out.println("Alteração realizada!");
+			System.out.println("AlteraÃ§Ã£o realizada!");
 			
 		} catch (SQLException e) {
 			System.out.println("Erro - " + e.getMessage());
@@ -59,7 +58,7 @@ public class LivroDAO {
 	}
 	
 	public void deletar(Integer codigoLivro) {
-		String sql = "DELETE FROM LIVRARIA WHERE codigo_livro = ?";
+		String sql = "DELETE FROM LIVRO WHERE codigo_livro = ?";
 
 		try {
 			
@@ -68,7 +67,7 @@ public class LivroDAO {
 
 			preparador.execute();
 			preparador.close();
-			System.out.println("Deleção realizada!");
+			System.out.println("DeleÃ§Ã£o realizada!");
 
 		} catch (SQLException e) {
 			System.out.println("Error: " + e.getMessage());
@@ -92,10 +91,10 @@ public class LivroDAO {
 				livro.setNome(resultados.getString("nome"));
 				livro.setAutor(resultados.getString("autor"));
 				livro.setEditora(resultados.getString("editora"));
-				livro.setEstoque(resultados.getInt("estoque"));
 				livro.setPreco(resultados.getDouble("preco"));
 				livro.setIsbn(resultados.getString("isbn"));
-				livro.setCodigoLivraria((Livraria) resultados.getObject("codigo_livraria"));
+				livro.setCodigoLivraria(resultados.getInt("codigo_livraria"));
+				livro.setCodigoLivro(resultados.getInt("codigo_livro"));
 				
 				livros.add(livro);
 			}

@@ -6,15 +6,25 @@ public class Livraria {
 	private String nome;
 	private String endereco;
 	private String cnpj;
+	private Integer estoque;
 	
 	public Livraria() {
 		
 	}
-	
-	public Livraria(String nome, String endereco, String cnpj) {
+
+	public Livraria(String nome, String endereco, String cnpj, Integer estoque) {
 		this.nome = nome;
 		this.endereco = endereco;
 		this.cnpj = cnpj;
+		this.estoque = estoque;
+	}
+	
+	public Integer getEstoque() {
+		return estoque;
+	}
+
+	public void setEstoque(Integer estoque) {
+		this.estoque = estoque;
 	}
 	
 	public Integer getCodigoLivraria() {
@@ -41,7 +51,4 @@ public class Livraria {
 	public void setCnpj(String cnpj) {
 		this.cnpj = cnpj;
 	}
-	
-	
-	
 }

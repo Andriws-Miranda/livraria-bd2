@@ -13,7 +13,7 @@ public class Conexao {
 		Class.forName("org.postgresql.Driver");
 		Connection conecta = DriverManager.getConnection(URL, USER, PASSWORD);
 		if(conecta != null) {
-			System.out.println("Conex„o realizada com sucesso! Bem vindo!");
+			System.out.println("Conex√£o realizada com sucesso! Bem vindo!");
 			return conecta;
 		}
 		return null;
