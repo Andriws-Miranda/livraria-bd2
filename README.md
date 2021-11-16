@@ -26,3 +26,7 @@ CREATE TABLE LIVRO(codigo_livro SERIAL PRIMARY KEY,
 	FOREIGN KEY (codigo_livraria) REFERENCES LIVRARIA (codigo_livraria)
 );
 
+CREATE TABLE VENDA (codigo_venda SERIAL PRIMARY KEY, 
+		data_venda DATE NOT NULL, 
+		codigo_livro INTEGER NOT NULL, 
+		FOREIGN KEY(codigo_livro) REFERENCES LIVRO(codigo_livro));
