@@ -63,7 +63,7 @@ public class Main {
 				List<Livraria> livrarias = dao.obterTodos();
 				for (Livraria l : livrarias) {
 					System.out.println("Nome: " + l.getNome() + "\n" + "Endereco: " + l.getEndereco() + "\n"
-							+ "CNPJ: " + l.getCnpj() + "\n" + l.getCodigoLivraria());
+							+ "CNPJ: " + l.getCnpj() + "\n" + "Codigo Livraria: " + l.getCodigoLivraria());
 				}
 			}else if(operacao == 4) {
 				Livraria livraria = new Livraria();
@@ -140,7 +140,7 @@ public class Main {
 				
 				List<Livro> livros = dao.obterLivros();
 				for (Livro l : livros) {
-					System.out.println("Nome: " + l.getNome() + "\n" + "Autor: " + l.getAutor() + "\n" + l.getCodigoLivro());
+					System.out.println("Nome: " + l.getNome() + "\n" + "Autor: " + l.getAutor() + "\n" + "Codigo Livro: " +  l.getCodigoLivro());
 				}
 			} else if(operacao == 4) {
 				teclado = new Scanner(System.in);
