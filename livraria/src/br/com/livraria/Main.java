@@ -140,7 +140,7 @@ public class Main {
 				
 				List<Livro> livros = dao.obterLivros();
 				for (Livro l : livros) {
-					System.out.println("Nome: " + l.getNome() + "\n" + "Autor: " + l.getAutor() + "\n" + "Codigo Livro: " +  l.getCodigoLivro());
+					System.out.println("Nome: " + l.getNome() + "\n" + "Autor: " + l.getAutor() + "\n" + "Codigo Livro: " + l.getCodigoLivro());
 				}
 			} else if(operacao == 4) {
 				teclado = new Scanner(System.in);
