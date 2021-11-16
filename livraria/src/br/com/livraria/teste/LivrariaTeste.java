@@ -39,6 +39,7 @@ public class LivrariaTeste {
 
 		Livraria livraria = new Livraria();
 
+		livraria.setCodigoLivraria(1);
 		livraria.setNome("Novo nome");
 		livraria.setEndereco("Endereco");
 		livraria.setCnpj("00000000000001");
@@ -59,7 +60,7 @@ public class LivrariaTeste {
 	public static void deletarTeste() {
 		
 		Livraria livraria = new Livraria();
-		livraria.setCodigoLivraria(1000);
+		livraria.setCodigoLivraria(1);
 		
 		LivrariaDAO dao = null;
 
